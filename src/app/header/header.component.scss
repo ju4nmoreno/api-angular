@@ -1,0 +1,19 @@
+@import '../scss/_mixins.scss';
+header {
+  background-color: #194683;
+  background-image: url(../../../public/images/logo-almundo.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  text-indent: -9999px;
+  border-bottom: #5d7da3 solid 2px;
+
+  @include breakpoint(D) {
+    height: calvw(80, 1);
+    background-position-x: calvw(9, 1);
+  }
+
+  @include breakpoint(DL) {
+    height: 80px;
+    background-position-x: 9px;
+  }
+}

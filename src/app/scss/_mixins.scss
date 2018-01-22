@@ -1,0 +1,41 @@
+@function calvw($some-number, $bresk: 0) {
+  $refere: 1280;
+
+  @if ($bresk == 0) {
+    $refere: 360;
+  }
+  $result: ($some-number * 100 / $refere) + vw;
+  @return $result;
+}
+
+@mixin breakpoint($class) {
+  @if $class==t {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $class==Tl {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $class==D {
+    @media (max-width: 1280px) {
+      @content;
+    }
+  } @else if $class==DL {
+    @media (min-width: 1281px) {
+      @content;
+    }
+  }
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
