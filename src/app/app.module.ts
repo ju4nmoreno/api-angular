@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FilterComponent } from './filter/filter.component';
+import { PostsService } from './posts.service';
 
 
 @NgModule({
@@ -14,9 +17,11 @@ import { FilterComponent } from './filter/filter.component';
     FilterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    RouterModule.forRoot(RouterModule)
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
