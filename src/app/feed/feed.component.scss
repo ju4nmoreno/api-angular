@@ -1,0 +1,17 @@
+@import '../scss/_mixins.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+.feed {
+  width: 100%;
+  background-color: #fff;
+  padding: 8px;
+
+  @include box-shadow(0px, 0px, 2px, #cdcdd1);
+}
+
+h2 {
+  font-size: 16px;
+}
