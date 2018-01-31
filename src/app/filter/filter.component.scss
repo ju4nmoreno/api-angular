@@ -1,14 +1,26 @@
 @import '../scss/_mixins.scss';
 
+
+svg{
+  fill: #000;
+  width: 100%;
+  height: 100%;
+}
+
+
+
 .filter {
   @include breakpoint(t) {
     width: calvw(320, 1);
-    padding: 0 calvw(30, 1);
+
+    margin-right: calvw(2i0,1);
+    
   }
+
 
   @include breakpoint(DL) {
     width: 320px;
-    padding: 0 30px;
+    margin-right: 20px;
   }
 }
 
@@ -27,22 +39,37 @@
 }
 
 .filter__title {
+  margin: 0 0 0 0;
   font-size: calvw(18);
+  color:#444444;
+
   @include breakpoint(t) {
     font-size: calvw(18, 1);
+    margin-bottom: calvw(5,1);
   }
 
   @include breakpoint(DL) {
     font-size: 18px;
+    margin-bottom: 5px;
   }
 }
 
 .search {
+  @include breakpoint(t){
+    margin-bottom: calvw(5,1);
+  }
+
+  @include breakpoint(DL) {
+    margin-bottom: 5px;
+  }
+
   h2 {
     color: #157ab1;
     display: flex;
+
     @include breakpoint(t) {
       font-size: calvw(14, 1);
+
     }
 
     @include breakpoint(DL) {
@@ -55,8 +82,7 @@
       height: 10px;
       color: blue;
       display: block;
-      background-color: gold;
-      background-image: url('../../../public/images/icons/filters/search.svg');
+      background-image: url('../../assets/images/icons/filters/search.svg');
     }
   }
 

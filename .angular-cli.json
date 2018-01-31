@@ -12,8 +12,9 @@
         "favicon.ico",
         {
           "glob": "*.svg",
-          "input": "../node_modules/material-design-icons/sprites/svg-sprite/",
-          "output": "assets/svg-icons"
+          "input": "./assets/",
+          "output": "./assets/svg-icons",
+          "allowOutsideOutDir": true
 
         }],
       "index": "index.html",

@@ -2,7 +2,12 @@
   <h2 class="filter__title">Filtros</h2>
 
   <div class="search">
-    <h2>Nombre de hotel</h2>
+    <h2>
+      <span class="svg__content">
+        <app-svg path="searchs"></app-svg>
+      </span>
+      Nombre de hotel
+    </h2>
     <div class="search__item">
       <input type="text" class="search__input" placeholder="Ingrese el nombre de hotel">
       <button class="search__btn">Aceptar</button>
@@ -12,8 +17,16 @@
   <div class="stars">
     <h2>Estrellas</h2>
 
+   
+    
+    <div style="width:300px; height: 300px;">
+      <svg >
+        <use xlink:href="assets/sprite.svg#star"></use>
+      </svg>
+      
+    </div>
 
-    <div ng-include="'./search.svg'" ></div>
+   
 
     <ul class="starts__list">
       <li><input type="checkbox"><label for=""></label></li>

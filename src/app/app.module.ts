@@ -3,15 +3,15 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import { SvgIconSpriteModule } from 'ng-svg-icon-sprite';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FilterComponent } from './filter/filter.component';
-<<<<<<< HEAD
 import { FeedComponent } from './feed/feed.component';
-=======
 import { PostsService } from './posts.service';
->>>>>>> f2f1db692faf80cdcc1403abfc5c13f219412bfc
+import { SvgComponent } from './svg/svg.component';
+
 
 
 @NgModule({
@@ -19,12 +19,14 @@ import { PostsService } from './posts.service';
     AppComponent,
     HeaderComponent,
     FilterComponent,
-    FeedComponent
+    FeedComponent,
+    SvgComponent
+
   ],
   imports: [
     BrowserModule,
-    HttpModule,
-    RouterModule.forRoot(RouterModule)
+    SvgIconSpriteModule,
+    HttpModule
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
