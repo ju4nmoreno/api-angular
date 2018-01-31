@@ -1,7 +1,7 @@
 @import '../scss/_mixins.scss';
 
 .filter {
-  @include breakpoint(D) {
+  @include breakpoint(t) {
     width: calvw(320, 1);
     padding: 0 calvw(30, 1);
   }
@@ -18,7 +18,7 @@
   background-color: white;
   @include box-shadow(0px, 0px, 2px, #cdcdd1);
 
-  @include breakpoint(D) {
+  @include breakpoint(t) {
     padding: calvw(15, 1);
   }
   @include breakpoint(DL) {
@@ -28,7 +28,7 @@
 
 .filter__title {
   font-size: calvw(18);
-  @include breakpoint(D) {
+  @include breakpoint(t) {
     font-size: calvw(18, 1);
   }
 
@@ -41,7 +41,7 @@
   h2 {
     color: #157ab1;
     display: flex;
-    @include breakpoint(D) {
+    @include breakpoint(t) {
       font-size: calvw(14, 1);
     }
 
@@ -71,7 +71,7 @@
     width: 60%;
     border-radius: 5px;
 
-    @include breakpoint(D) {
+    @include breakpoint(t) {
       font-size: calvw(14, 1);
       padding: calvw(5, 1) calvw(8, 1);
       height: calvw(31, 1);
@@ -87,7 +87,7 @@
     border-radius: 5px;
     background-color: #002c77;
     color: white;
-    @include breakpoint(D) {
+    @include breakpoint(t) {
       font-size: calvw(15, 1);
     }
     @include breakpoint(DL) {

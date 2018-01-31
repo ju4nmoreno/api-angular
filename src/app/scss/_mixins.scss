@@ -10,15 +10,15 @@
 
 @mixin breakpoint($class) {
   @if $class==t {
-    @media (max-width: 767px) {
+    @media (min-width: 800px) {
       @content;
     }
   } @else if $class==Tl {
-    @media (max-width: 1024px) {
+    @media (min-width: 1024px) {
       @content;
     }
   } @else if $class==D {
-    @media (max-width: 1280px) {
+    @media (min-width: 1280px) {
       @content;
     }
   } @else if $class==DL {

@@ -7,7 +7,7 @@ header {
   text-indent: -9999px;
   border-bottom: #5d7da3 solid 2px;
 
-  @include breakpoint(D) {
+  @include breakpoint(t) {
     height: calvw(80, 1);
     background-position-x: calvw(9, 1);
   }

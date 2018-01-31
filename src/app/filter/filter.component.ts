@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-filter',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
-  constructor() { }
+  posts: any = [];
+
+  constructor(private postsService: PostsService) { }
 
   ngOnInit() {
+
+    this.postsService.getAllPosts().subscribe(posts => {
+      this.posts = posts;
+
+      console.log(this.posts);
+    });
   }
 
 }
