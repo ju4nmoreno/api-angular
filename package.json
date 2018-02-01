@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "create-icon-sprite": "svg-symbols ./src/assets/images/icons/filters > ./src/assets/sprite.svg"
+    "create-icon-sprite": "svg-symbols ./src/assets/images/icons/ > ./src/assets/sprite.svg"
   },
   "private": true,
   "dependencies": {

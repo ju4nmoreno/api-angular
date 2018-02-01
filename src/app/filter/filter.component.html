@@ -3,11 +3,15 @@
 
   <div class="search">
     <h2>
-      <span class="svg__content">
-        <app-svg path="searchs"></app-svg>
+      <span class="search__svgcontent">
+        <svg-icon-sprite
+          [src]="'assets/sprite.svg#search'"
+          [width]="'100%'"
+        ></svg-icon-sprite>
       </span>
-      Nombre de hotel
+      <span class="search__title">Nombre de hotel</span>
     </h2>
+
     <div class="search__item">
       <input type="text" class="search__input" placeholder="Ingrese el nombre de hotel">
       <button class="search__btn">Aceptar</button>
@@ -15,26 +19,49 @@
   </div>
   
   <div class="stars">
-    <h2>Estrellas</h2>
-
+    <h2>
+      <span class="stars__svgcontent">
+        <svg-icon-sprite
+          [src]="'assets/sprite.svg#star'"
+          [width]="'100%'"
+        ></svg-icon-sprite>
+      </span>
+      <div class="stars__title">Estrellas</div>
+    </h2>
    
-    
-    <div style="width:300px; height: 300px;">
-      <svg >
-        <use xlink:href="assets/sprite.svg#star"></use>
-      </svg>
+
+    <div class="starts__list">
+      <label for=""><input type="radio" name="stars[1]"><span class="stars__allstars">Todas las estrellas</span></label>
+      <label for=""><input type="radio" name="stars[1]" value="5">
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+      </label>
+      <label for=""><input type="radio" name="stars[1]" value="4">
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+      </label>
+      <label for=""><input type="radio" name="stars[1]" value="3">
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+      </label>
+      <label for=""><input type="radio" name="stars[1]" value="2">
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+       
+      </label>
+      <label for=""><input type="radio" name="stars[1]" value="1">
+        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        
+      </label>
+
+     
       
     </div>
-
-   
-
-    <ul class="starts__list">
-      <li><input type="checkbox"><label for=""></label></li>
-      <li><input type="checkbox"><label for=""></label></li>
-      <li><input type="checkbox"><label for=""></label></li>
-      <li><input type="checkbox"><label for=""></label></li>
-      <li><input type="checkbox"><label for=""></label></li>
-      <li><input type="checkbox"><label for=""></label></li>
-    </ul>
   </div>
 </div>
