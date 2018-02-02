@@ -1,17 +1,78 @@
 @import '../scss/_mixins.scss';
 
-* {
-  box-sizing: border-box;
+h2 {
+  font-size: 16px;
+  margin: 0;
+  color: #005098;
 }
+
+caption{
+  margin:5px 0 0 20px;
+}
+
 
 .feed {
   width: 100%;
   background-color: #fff;
   padding: 8px;
-
   @include box-shadow(0px, 0px, 2px, #cdcdd1);
+  display:flex;
+
+  &__item{
+    width: 75%;
+    border-right: 1px dashed #cacaca;
+  }
+
+  &__content{
+    width: 100%;
+    display: flex;
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+  }
+
+    &__description{
+      width: 50%;
+      text-align: center;
+      color:#3a3a3a;
+      font-size: 12px;
+    }
+
+    &__priceContent{
+      display: flex;
+      align-items: center;
+      color:#dd5e00;
+      margin-bottom: 20px;
+    }
+
+
+      &__current{
+        font-size: 20px;
+        margin-right: 2vpx;
+      }
+
+      &__price{
+        font-size: 30px;
+        font-weight: bold;
+        margin-left: 2px;
+      }
+
+    &__see{
+      background-color: #002c77;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      width: 168px;
+      height: 37px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius:3px;
+    }
 }
 
-h2 {
-  font-size: 16px;
-}

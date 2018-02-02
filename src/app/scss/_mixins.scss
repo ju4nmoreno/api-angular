@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 @function calvw($some-number, $bresk: 0) {
   $refere: 1280;
 
