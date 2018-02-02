@@ -1,34 +1,20 @@
 @import '../scss/_mixins.scss';
 
-
-svg{
-  fill: #000;
-  width: 100%;
-  height: 100%;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
-
 .filter {
+  width: 100%;
 
-  h2:after{
-    content: none;
-  }
   @include breakpoint(t) {
     width: calvw(320, 1);
-
-    margin-right: calvw(2i0,1);
-    
+    margin-right: calvw(20, 1);
   }
-
 
   @include breakpoint(DL) {
     width: 320px;
     margin-right: 20px;
+  }
+
+  h2:after {
+    content: none;
   }
 }
 
@@ -49,11 +35,11 @@ svg{
 .filter__title {
   margin: 0 0 0 0;
   font-size: calvw(18);
-  color:#444444;
+  color: #444444;
 
   @include breakpoint(t) {
     font-size: calvw(18, 1);
-    margin-bottom: calvw(5,1);
+    margin-bottom: calvw(5, 1);
   }
 
   @include breakpoint(DL) {
@@ -62,7 +48,7 @@ svg{
   }
 }
 
-h2{
+h2 {
   color: #157ab1;
   display: flex;
   align-items: baseline;
@@ -70,7 +56,7 @@ h2{
 
   @include breakpoint(t) {
     font-size: calvw(14, 1);
-    margin-bottom: calvw(17,1);
+    margin-bottom: calvw(17, 1);
   }
 
   @include breakpoint(DL) {
@@ -78,33 +64,33 @@ h2{
     margin-bottom: 17px;
   }
 
-  &:after{
-      content: "";
-      width: 0;
-      height: 0;
-      border-bottom: 6px solid #157ab1;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      align-self: center;
-    }
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-bottom: 6px solid #157ab1;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    align-self: center;
+  }
 }
 
 .search {
-  @include breakpoint(t){
-    margin-bottom: calvw(5,1);
+  @include breakpoint(t) {
+    margin-bottom: calvw(5, 1);
   }
 
   @include breakpoint(DL) {
     margin-bottom: 5px;
   }
 
-  &__svgcontent{
+  &__svgcontent {
     width: 15px;
     height: 15px;
     margin-right: 8px;
   }
 
-  &__title{
+  &__title {
     width: 100%;
   }
 
@@ -127,7 +113,7 @@ h2{
     }
     @include breakpoint(DL) {
       font-size: 14px;
-      padding:0 8px;
+      padding: 0 8px;
       height: 31px;
       width: 168px;
     }
@@ -139,13 +125,13 @@ h2{
     background-color: #002c77;
     border: none;
     color: white;
-     -webkit-user-select: none; /* for button */
-       -moz-user-select: none;
-        -ms-user-select: none;
+    -webkit-user-select: none; /* for button */
+    -moz-user-select: none;
+    -ms-user-select: none;
     @include breakpoint(t) {
       font-size: calvw(15, 1);
-      width: calvw(72,1);
-      margin-right: calvw(5,1);
+      width: calvw(72, 1);
+      margin-right: calvw(5, 1);
     }
     @include breakpoint(DL) {
       font-size: 15px;
@@ -155,33 +141,31 @@ h2{
   }
 }
 
-.stars{
-
-  &__svgcontent{
+.stars {
+  &__svgcontent {
     display: flex;
     margin-right: 8px;
     width: 13px;
     height: 14px;
   }
 
-  &__title{
+  &__title {
     width: 100%;
   }
 
-  &__allstars{
+  &__allstars {
     font-weight: bold;
     font-size: 12px;
     color: black;
   }
 
-  input{
+  input {
     margin-right: 10px;
   }
 
-
-  label{
+  label {
     height: 20px;
-    color:#fdba12;
+    color: #fdba12;
     display: flex;
     align-items: center;
   }

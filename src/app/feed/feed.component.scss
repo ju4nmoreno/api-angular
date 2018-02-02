@@ -1,34 +1,85 @@
 @import '../scss/_mixins.scss';
 
 h2 {
-  font-size: 16px;
-  margin: 0;
   color: #005098;
+  text-align: left;
+  font-size: calvw(16);
+
+  @include breakpoint (t) {
+    font-size: calvw(16, 1);
+    margin: 0;
+  }
+
+  @include breakpoint(DL) {
+    font-size: 16px;
+    margin: 0;
+  }
 }
 
-caption{
-  margin:5px 0 0 20px;
+img {
+  width: 100%;
+
+  @include breakpoint(t) {
+    width: calvw(600, 1);
+  }
+
+  @include breakpoint(DL) {
+    width: 600px;
+  }
 }
 
+caption {
+  width: 100%;
+  margin: 0 0 0 20px;
+
+  @include breakpoint(t) {
+    margin-left: calvw(20, 1);
+  }
+  @include breakpoint(DL) {
+    margin-left: 20px;
+  }
+
+  > * {
+    margin: calvw(10) 0;
+
+    @include breakpoint(t) {
+      margin: calvw(10, 1) 0;
+    }
+
+    @include breakpoint(DL) {
+      margin: 10px 0;
+    }
+  }
+}
 
 .feed {
   width: 100%;
   background-color: #fff;
-  padding: 8px;
   @include box-shadow(0px, 0px, 2px, #cdcdd1);
-  display:flex;
+  display: flex;
+  padding: calvw(8);
+  flex-direction: column;
 
-  &__item{
+  @include breakpoint(t) {
+    padding: calvw(8, 1);
+    flex-direction: row;
+  }
+
+  @include breakpoint(DL) {
+    padding: 8px;
+  }
+
+  &__item {
     width: 75%;
     border-right: 1px dashed #cacaca;
   }
 
-  &__content{
+  &__content {
     width: 100%;
     display: flex;
   }
 
-  &__info{
+  &__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,43 +87,108 @@ caption{
     width: 25%;
   }
 
-    &__description{
-      width: 50%;
-      text-align: center;
-      color:#3a3a3a;
+  &__description {
+    width: 50%;
+    text-align: center;
+    color: #3a3a3a;
+    font-size: calvw(12);
+    @include breakpoint(t) {
+      font-size: calvw(12, 1);
+    }
+    @include breakpoint(DL) {
       font-size: 12px;
     }
+  }
 
-    &__priceContent{
-      display: flex;
-      align-items: center;
-      color:#dd5e00;
-      margin-bottom: 20px;
+  &__pricecontent {
+    display: flex;
+    align-items: center;
+    color: #dd5e00;
+    margin-bottom: calvw(3);
+
+    @include breakpoint(DL) {
+      margin-bottom: calvw(3, 1);
     }
 
+    @include breakpoint(DL) {
+      margin-bottom: 3px;
+    }
+  }
 
-      &__current{
-        font-size: 20px;
-        margin-right: 2vpx;
-      }
+  &__current {
+    font-size: calvw(20);
+    margin-right: calvw(2);
 
-      &__price{
-        font-size: 30px;
-        font-weight: bold;
-        margin-left: 2px;
-      }
+    @include breakpoint(t) {
+      margin-right: calvw(2, 1);
+      font-size: calvw(20, 1);
+    }
+    @include breakpoint(DL) {
+      font-size: 20px;
+      margin-right: 2px;
+    }
+  }
 
-    &__see{
-      background-color: #002c77;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+  &__price {
+    font-weight: bold;
+    font-size: calvw(30);
+    margin-left: calvw(2);
+
+    @include breakpoint(t) {
+      font-size: calvw(30, 1);
+      margin-left: calvw(2, 1);
+    }
+    @include breakpoint(DL) {
+      font-size: 30px;
+      margin-left: 2px;
+    }
+  }
+
+  &__see {
+    background-color: #002c77;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: calvw(168);
+    height: calvw(37);
+    border-radius: calvw(3);
+
+    @include breakpoint(t) {
+      width: calvw(168, 1);
+      height: calvw(37, 1);
+      border-radius: calvw(3, 1);
+    }
+    @include breakpoint(DL) {
       width: 168px;
       height: 37px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius:3px;
+      border-radius: 3px;
     }
-}
+  }
 
+  &__stars {
+    display: flex;
+    color: #fdba12;
+  }
+
+  &__svgcontent {
+    display: block;
+    width: calvw(20);
+    height: calvw(20);
+
+    @include breakpoint(t) {
+      width: calvw(20, 1);
+      height: calvw(20, 1);
+    }
+    @include breakpoint(DL) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+  }
+}

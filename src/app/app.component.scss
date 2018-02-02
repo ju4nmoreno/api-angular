@@ -1,4 +1,3 @@
-
 @import './scss/_mixins.scss';
 
 * {
@@ -8,14 +7,14 @@
 main {
   display: flex;
   flex-direction: column;
-  
-  @include breakpoint(t){
+
+  @include breakpoint(t) {
     flex-direction: row;
-    padding: calvw(10,1);
+    padding: calvw(20, 1);
     justify-content: space-between;
   }
 
-  @include breakpoint(DL){
+  @include breakpoint(DL) {
     padding: 20px;
   }
 }
