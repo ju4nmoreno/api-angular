@@ -1,22 +1,21 @@
- <div class="feed">
-  
-  <div class="feed__item">
+<div  class="feed" *ngFor="let info of data">
+  <div class="feed__item" >
     <div class="feed__content">
-      <img src="assets/images/hotels/2a5bb415_b.jpg" alt="">
+      <img src="assets/images/hotels/{{info.image}}" alt="">
       <caption>
-        <h2>Hotel Stefanos</h2>
+        <h2>{{info.name}}</h2>
         <div class="feed__stars">
           <span class="feed__star">
-            <span class="feed__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="feed__svgcontent num{{info.stars}}"  *ngFor="let items of stars(info.stars) ">
+              <svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite>
+            </span>
           </span>
         </div>
 
         <div class="feed__icons">
-          
-          <span class="feed__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#bathrobes'" [width]="'100%'"></svg-icon-sprite></span>
-
-          <span class="feed__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#bathrobes'" [width]="'100%'"></svg-icon-sprite></span>
-          
+          <span class="feed__svgcontent"  *ngFor="let item of info.amenities">
+            <svg-icon-sprite [src]="'assets/sprite.svg#'+item" [width]="'100%'"></svg-icon-sprite>
+          </span>
         </div> 
       </caption>
     </div>
@@ -27,7 +26,7 @@
 
     <div class="feed__pricecontent">
       <span class="feed__current">ARS</span>
-      <span class="feed__price">863</span>
+      <span class="feed__price">{{info.price}}</span>
     </div>
 
     <a class="feed__see" href="#">Ver Hotel</a>

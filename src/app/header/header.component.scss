@@ -3,12 +3,15 @@ header {
   background-color: #194683;
   background-image: url(../../assets/images/icons/logo-almundo.svg);
   background-repeat: no-repeat;
-  background-position: 0 50%;
+  background-position: 5% 50%;
+  background-size: calvw(135) auto;
   text-indent: -9999px;
   border-bottom: #5d7da3 solid 2px;
+  height: calvw(60);
 
   @include breakpoint(t) {
     height: calvw(80, 1);
+    background-size: auto;
     background-position-x: calvw(9, 1);
   }
 

@@ -6,13 +6,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PostsService {
 
-  constructor(private http: Http) { 
-
-
+  constructor(private http: Http) {}
+  
+  getAllPosts(stars:string='all', str:string){
+    return this.http.get(`http://localhost:8010/api/${stars}/${str}`).map(res => res.json());
   }
-
-   getAllPosts(){
-      return this.http.get('api/2/hotel').map(res => res.json());
-    }
 
 }

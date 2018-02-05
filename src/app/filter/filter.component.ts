@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PostsService } from '../posts.service';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-filter',
@@ -9,16 +10,36 @@ import { PostsService } from '../posts.service';
 export class FilterComponent implements OnInit {
 
   posts: any = [];
+  numStars: string = 'all';
+  str: string;
+
+  @Input() public info: any = 0;
 
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
 
-    this.postsService.getAllPosts().subscribe(posts => {
-      this.posts = posts;
-
-      console.log(this.posts);
-    });
+    this.loadInfo(this.str);
+    
   }
 
+  loadInfo (str){
+    
+    this.postsService.getAllPosts(this.numStars, str).subscribe(posts => {
+      if (posts.success)
+        this.info = posts;
+      else this.info = 0;
+    });
+    
+  }
+
+  checkInfo(value){
+
+    if(value !== "") this.loadInfo(value);
+
+  }
+
+  change (value){
+    this.numStars = value;
+  }
 }

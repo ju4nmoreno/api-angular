@@ -1,64 +1,81 @@
-<div class="filter">
-  <h2 class="filter__title">Filtros</h2>
-
-  <div class="search">
-    <h2>
-      <span class="search__svgcontent">
-        <svg-icon-sprite
-          [src]="'assets/sprite.svg#search'"
-          [width]="'100%'"
-        ></svg-icon-sprite>
-      </span>
-      <span class="search__title">Nombre de hotel</span>
-    </h2>
-
-    <div class="search__item">
-      <input type="text" class="search__input" placeholder="Ingrese el nombre de hotel">
-      <button class="search__btn">Aceptar</button>
-    </div>
-  </div>
+<main>
   
-  <div class="stars">
-    <h2>
-      <span class="stars__svgcontent">
-        <svg-icon-sprite
-          [src]="'assets/sprite.svg#star'"
-          [width]="'100%'"
-        ></svg-icon-sprite>
-      </span>
-      <div class="stars__title">Estrellas</div>
-    </h2>
-   
+  <div class="filter">
+    <h2 class="filter__title">Filtros</h2>
 
-    <div class="starts__list">
-      <label for=""><input type="radio" name="stars[1]"><span class="stars__allstars">Todas las estrellas</span></label>
-      <label for=""><input type="radio" name="stars[1]" value="5">
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-      </label>
-      <label for=""><input type="radio" name="stars[1]" value="4">
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-      </label>
-      <label for=""><input type="radio" name="stars[1]" value="3">
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-      </label>
-      <label for=""><input type="radio" name="stars[1]" value="2">
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-       
-      </label>
-      <label for=""><input type="radio" name="stars[1]" value="1">
-        <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
-        
-      </label>
+    <div class="search">
+      <h2>
+        <span class="search__svgcontent">
+          <svg-icon-sprite
+            [src]="'assets/sprite.svg#search'"
+            [width]="'100%'"
+          ></svg-icon-sprite>
+        </span>
+        <span class="search__title">Nombre de hotel</span>
+      </h2>
+
+      <div class="search__item">
+        <input type="text" class="search__input" 
+        placeholder="Ingrese el nombre de hotel" required="" 
+        #str
+        name="str"/>
+        <button class="search__btn" (click)="checkInfo(str.value)">Aceptar</button>
+      </div>
+    </div>
+    
+    <div class="stars">
+      <h2>
+        <span class="stars__svgcontent">
+          <svg-icon-sprite
+            [src]="'assets/sprite.svg#star'"
+            [width]="'100%'"
+          ></svg-icon-sprite>
+        </span>
+        <div class="stars__title">Estrellas</div>
+      </h2>
+     
+
+      <div class="starts__list">
+        <label for="stars[1]">
+          <input type="radio" #numStars name="stars[1]" checked="true" value="all" (change)="change('all')">
+          <span class="stars__allstars">Todas las estrellas</span>
+        </label>
+        <label for=""><input type="radio" #numStars name="stars[1]" value="5" (change)="change(5)">
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        </label>
+        <label for=""><input type="radio" #numStars name="stars[1]" value="4" (change)="change(4)">
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        </label>
+        <label for=""><input type="radio" #numStars name="stars[1]" value="3" (change)="change(3)">
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+        </label>
+        <label for=""><input type="radio" #numStars name="stars[1]" value="2" (change)="change(2)">
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+         
+        </label>
+        <label for=""><input type="radio" #numStars name="stars[1]" value="1" (change)="change(1)">
+          <span class="stars__svgcontent"><svg-icon-sprite [src]="'assets/sprite.svg#star'" [width]="'100%'"></svg-icon-sprite></span>
+          
+        </label>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="feeds-contains">
+    <app-feed [info]="info.response"></app-feed>
+
+    <div *ngIf="info == 0">
+      <strong>No Resultados</strong>
+    </div>
+  </div>
+</main>@

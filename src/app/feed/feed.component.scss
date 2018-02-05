@@ -28,6 +28,11 @@ img {
   }
 }
 
+::ng-deep svg.icon use {
+  fill: orange;
+}
+
+
 caption {
   width: 100%;
   margin: 0 0 0 20px;
@@ -59,24 +64,45 @@ caption {
   display: flex;
   padding: calvw(8);
   flex-direction: column;
+  margin-bottom: calvw(20);
 
   @include breakpoint(t) {
     padding: calvw(8, 1);
     flex-direction: row;
+    margin-bottom: calvw(20,1);
   }
 
   @include breakpoint(DL) {
+    margin-bottom: 20px;
     padding: 8px;
   }
 
+  .icon{
+    color:black;
+    fill:black
+  }
+
   &__item {
-    width: 75%;
-    border-right: 1px dashed #cacaca;
+    @include breakpoint(t){
+
+      border-right: 1px dashed #cacaca;
+      width: 75%;
+    }
   }
 
   &__content {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    padding-bottom: calvw(20);
+    border-bottom: 1px dashed #cacaca;
+    
+    @include breakpoint(t){
+      padding-bottom: 0;
+      border: none;
+      flex-direction: row;
+    }
+
   }
 
   &__info {
@@ -84,15 +110,21 @@ caption {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25%;
+
+    @include breakpoint(t){
+      width: 25%;
+
+    }
   }
 
   &__description {
-    width: 50%;
     text-align: center;
     color: #3a3a3a;
     font-size: calvw(12);
+    margin-top: calvw(30);
     @include breakpoint(t) {
+      margin-top: 0;
+      width: 50%;
       font-size: calvw(12, 1);
     }
     @include breakpoint(DL) {
@@ -152,16 +184,23 @@ caption {
     align-items: center;
     justify-content: center;
     display: flex;
-    width: calvw(168);
+    width: 90%;
     height: calvw(37);
+    font-size: calvw(18);
     border-radius: calvw(3);
+    margin-top: calvw(10);
+    margin-bottom: calvw(30);
 
     @include breakpoint(t) {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: calvw(18,1);
       width: calvw(168, 1);
       height: calvw(37, 1);
       border-radius: calvw(3, 1);
     }
     @include breakpoint(DL) {
+      font-size: 18px;
       width: 168px;
       height: 37px;
       border-radius: 3px;
@@ -173,18 +212,26 @@ caption {
     color: #fdba12;
   }
 
+  &__star{
+    display: flex;
+  }
+
   &__svgcontent {
     display: block;
+    colof:black;
     width: calvw(20);
     height: calvw(20);
+    margin-right: calvw(5);
 
     @include breakpoint(t) {
       width: calvw(20, 1);
       height: calvw(20, 1);
+      margin-right: calvw(5,1);
     }
     @include breakpoint(DL) {
       width: 20px;
       height: 20px;
+      margin-right: 5px;
     }
   }
 

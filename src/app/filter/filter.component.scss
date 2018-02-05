@@ -13,9 +13,7 @@
     margin-right: 20px;
   }
 
-  h2:after {
-    content: none;
-  }
+  
 }
 
 .search,
@@ -35,11 +33,26 @@
 .filter__title {
   margin: 0 0 0 0;
   font-size: calvw(18);
-  color: #444444;
+  color: #157ab1;
+  height: calvw(41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:after{
+    margin-left: calvw(10);
+  }
 
   @include breakpoint(t) {
+    color: #444444;
     font-size: calvw(18, 1);
     margin-bottom: calvw(5, 1);
+    height: auto;
+    justify-content: flex-start;
+
+    &:after{
+      content: none;
+    }
   }
 
   @include breakpoint(DL) {
@@ -76,7 +89,9 @@ h2 {
 }
 
 .search {
+  display: none;
   @include breakpoint(t) {
+    display: block;
     margin-bottom: calvw(5, 1);
   }
 
@@ -131,17 +146,22 @@ h2 {
     @include breakpoint(t) {
       font-size: calvw(15, 1);
       width: calvw(72, 1);
-      margin-right: calvw(5, 1);
+      margin-left: calvw(5, 1);
     }
     @include breakpoint(DL) {
       font-size: 15px;
       width: 72px;
-      margin-right: 5px;
+      margin-left: 5px;
     }
   }
 }
 
 .stars {
+  display: none;
+
+  @include breakpoint(t){
+    display: block;
+  }
   &__svgcontent {
     display: flex;
     margin-right: 8px;
