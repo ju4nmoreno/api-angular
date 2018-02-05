@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express(); 
+const cors = require('cors');
 
 var fs = require('fs');
 var obj;
@@ -8,6 +9,8 @@ fs.readFile('./server/data/data.json', 'utf8', function (err, data) {
   obj = JSON.parse(data);
  
 });
+
+app.use(cors());
 
 function searchStringInArray (strSearch, strObj) {
     
