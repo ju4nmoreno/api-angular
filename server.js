@@ -54,7 +54,7 @@ router.get('/all/:name', function(req, res) {
     response.response = `no se encontro nada con ${text}`;
     response.success = false;
   }
-  else if ( text === 'undefined') a = obj;
+  else if (text === 'undefined') response.response = obj;
 
     
   res.json(response);
